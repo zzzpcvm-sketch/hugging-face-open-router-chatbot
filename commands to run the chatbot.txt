@@ -1,0 +1,17 @@
+
+In PowerShell, clone and install the repo:
+cd C:\Users\sorah\Desktop\llm
+git clone https://github.com/zzzpcvm-sketch/hugging-face-open-router-chatbot.git
+cd .\hugging-face-open-router-chatbot
+npm install
+notepad .env.local
+
+In .env.local, add your OpenRouter settings. Replace the key value locally—don’t share it or commit this file:
+OPENAI_BASE_URL=https://openrouter.ai/api/v1
+OPENAI_API_KEY=your_actual_openrouter_key
+MODELS=[{id:"liquid/lfm-3-1.7b:free",parameters:{max_tokens:512}}]
+
+Save, then start the chatbot:
+npm run dev -- --open
+
+It should open at http://localhost:5173. Choose the liquid/lfm-3-1.7b:free model for the 512-token cap.
